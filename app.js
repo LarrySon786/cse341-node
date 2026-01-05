@@ -1,20 +1,18 @@
 const express = require('express');
 const app = express();
-
-const port = process.env.PORT || 3000;
-
-
-app.use('/', require('./routes'));
+const routes = require('./routes/')
 
 
+// HOME PAGE ROUTE
+app.use('/', routes)
 
 
-app.listen(port, () => {
-    console.log(`Listening on ${port}`)
+// SERVER HOST INFORMATION
+const port = process.env.PORT
+const host = process.env.HOST
+const HOST = 'localhost'
+const PORT = 3000
+
+app.listen(PORT, () => {
+    console.log(`Listening on port: ${HOST}:${PORT}`)
 })
-
-
-
-
-
-
