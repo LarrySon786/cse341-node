@@ -1,0 +1,12 @@
+@hostname = 'cheese'
+
+# POST request
+
+
+# GET Request
+
+GET https://jsonplaceholder.typicode.com/posts?id=2;
+
+
+GET http://{{hostname}}routes;
+
