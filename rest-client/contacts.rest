@@ -1,3 +1,43 @@
-# GET https://cse341-test.onrender.com/contacts
+### GET Method examples:
 
+### Get One
+GET https://cse341-test.onrender.com/contacts
+
+### GET all
 GET https://contacts-project-gqld.onrender.com/contacts/695c53d97f43d0053fef7006
+
+### Local Host GET Request
+GET http://localhost:3000/contacts/
+
+
+### POST Method Example:
+
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Lucy",
+    "lastName":"Smith",
+    "email":"hero@example.com",
+    "favoriteColor":"Green",
+    "birthday":"06-26-2001"
+}
+
+### UPDATE Method Example
+
+PUT http://localhost:3000/contacts/696bc93eabeaf5d69d8a2856 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Sally",
+    "lastName":"Jenkins",
+    "email":"Heroine@example.com",
+    "favoriteColor":"Pink",
+    "birthday":"06-26-2001"
+}
+
+### DELETE Method Example
+
+DELETE http://localhost:3000/contacts/696bce8fff5b444ca91da3d3 HTTP/1.1
+
+

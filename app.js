@@ -1,20 +1,28 @@
 const express = require('express');
 const app = express();
 const routes = require('./routes/')
-const contactsRoute = require('./routes/contacts')
+// const contactsRoute = require('./routes/contacts')
 const mongodbRoutes = require('./data/database');
+const bodyParser = require('body-parser');
 
 
-// LEFT OFF ON SECOND TO LAST VIDEO FOR WEEK 1 PROJECT
 
+app.use(bodyParser.json());
 
+// SWAGGER Header Rules being set
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Orgin', '*')
+    res.setHeader(
+        'Access-Control-Allow-Headers',
+        'Orgin, X-Requested-With, Content-Type, Accept, Z-Key'
+    );
+    res.setHeader(
+        'Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+})
 
 // HOME PAGE ROUTE
 app.use('/', routes)
-
-// CONTACTS ROUTE
-app.use('/contacts', contactsRoute)
-
 
 // MONGODB connection
 mongodbRoutes.initDb((err) => {
